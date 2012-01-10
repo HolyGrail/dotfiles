@@ -11,6 +11,7 @@ typeset -U path
 ##            /: ディレクトリのみ残す。
 path=(# システム用
       /bin(N-/)
+      /sbin(N-/)
       # 自分用
       $HOME/local/bin(N-/)
       # Debian GNU/Linux用

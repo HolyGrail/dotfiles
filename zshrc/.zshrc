@@ -291,7 +291,7 @@ watch="all"
 log
 
 ## ^Dでログアウトしないようにする。
-setopt ignore_eof
+# setopt ignore_eof
 
 
 # 単語
@@ -372,6 +372,3 @@ update_title() {
 if [ -n "$DISPLAY" ]; then
     preexec_functions=($preexec_functions update_title)
 fi
-
-eval "$(rbenv init -)"
-source ~/.rbenv/completions/rbenv.zsh
