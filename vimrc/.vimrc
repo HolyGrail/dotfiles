@@ -2,9 +2,14 @@
 call pathogen#infect()
 set fileencodings=iso-2022-jp-3,iso-2022-jp,enc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
 
-set t_Co=256
 syntax enable
-set background=dark
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+set t_Co=16
+let g:solarized_termcolors=16
 colorscheme solarized
 set helplang=ja
 set laststatus=2
