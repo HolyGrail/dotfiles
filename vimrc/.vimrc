@@ -59,3 +59,27 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey guibg=darkg
 :let autodate_format=" %Y/%m/%d %H:%M:%S "
 
 let g:neocomplcache_enable_at_startup = 1
+
+""" unite.vim
+" 入力モードで開始する
+let g:unite_enable_start_insert=1
+
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> <C-o> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+inoremap <silent> <C-o> <ESC>:<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> <C-n> :<C-u>Unite buffer file_mru<CR>
+inoremap <silent> <C-n> <ESC>:<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+nmap <silent><buffer> <ESC><ESC> q
+imap <silent><buffer> <ESC><ESC> <ESC>q
