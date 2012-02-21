@@ -26,6 +26,7 @@ path=(# システム用
       # システム用
       /usr/local/bin(N-/)
       /usr/bin(N-/)
+      /usr/sbin(N-/)
       /usr/games(N-/))
 
 # sudo時のパスの設定
